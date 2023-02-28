@@ -1,15 +1,44 @@
 #!python3
-'''
-sort all of the values of x into 2 lists.
-1 list should contain all of the float values and the other list should contain all the integer values'''
 
+# data from
+# Advanced Dungeons and Dragons Dungeon Masters Guide p74 Cleric Table
+# https://s3.amazonaws.com/arena-attachments/804915/348b48a0cbd967122dcb76f5cc6f5a01.pdf
+"""
+This list of lists contains Table 1a Attack Matrix for Clerics, Druids and Monks 
+The index specifies the level of the character, and the entry within the row specifies the target to hit Armor Class with 10 on the far left, and -10 on the far right.
 
-def main():
-    integers = []
-    decimals = []
+Write a function that finds the target based on the level and the armor class
+Check the assertion tests for expected output.
 
-    x = [7.7, 1, 3.3, 4.2, 11.0, 1, 1, 2.8, 2, 8, 3, 4, 5, 7, 9.2, 3.1, 9, 6, 4, 8, 5, 1.9, 2, 4, 4, 5.2, 2, 5.4, 2, 3.4, 7, 9.2, 3.7, 10, 8, 7, 6, 2, 2.2, 1]
+Note that this could also be done with a single list and a formula to modify the list content!
+"""
 
+table = [
+    [],
+    [10,11,12,13,14,15,16,17,18,19,20,20,20,20,20,20,21,22,23,24,25],
+    [10,11,12,13,14,15,16,17,18,19,20,20,20,20,20,20,21,22,23,24,25],
+    [10,11,12,13,14,15,16,17,18,19,20,20,20,20,20,20,21,22,23,24,25],
+    [9,10,11,12,13,14,15,16,17,18,19,20,20,20,20,20,20,21,22,23,24],
+    [9,10,11,12,13,14,15,16,17,18,19,20,20,20,20,20,20,21,22,23,24],
+    [9,10,11,12,13,14,15,16,17,18,19,20,20,20,20,20,20,21,22,23,24],
+    [8,9,10,11,12,13,14,15,16,17,18,19,20,20,20,20,20,20,21,22,23],
+    [8,9,10,11,12,13,14,15,16,17,18,19,20,20,20,20,20,20,21,22,23],
+    [8,9,10,11,12,13,14,15,16,17,18,19,20,20,20,20,20,20,21,22,23],
+    [7,8,9,10,11,12,13,14,15,16,17,18,19,20,20,20,20,20,20,21,22],
+    [7,8,9,10,11,12,13,14,15,16,17,18,19,20,20,20,20,20,20,21,22],
+    [7,8,9,10,11,12,13,14,15,16,17,18,19,20,20,20,20,20,20,21,22],
+    [6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,20,20,20,20,20,21],
+    [6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,20,20,20,20,20,21],
+    [6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,20,20,20,20,20,21],
+    [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,20,20,20,20,20],
+    [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,20,20,20,20,20],
+    [5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,20,20,20,20,20],
+]
 
-if __name__ == "__main__":
-    main()
+def target(lvl,ac):
+    return
+
+def tests():
+    assert target(5,7) == 12
+    assert target(10,-10) == 20
+    assert target(17,-3) == 13

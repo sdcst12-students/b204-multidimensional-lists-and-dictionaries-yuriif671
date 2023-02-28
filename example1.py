@@ -1,29 +1,55 @@
 #!python
 
-'''
-Using the "in" operator to search tuples, lists, strings and dicts
-This can tell you if a particular value can be found in a list, tuple or string, but it can only find keys in dictionaries
-'''
-
-a = (3,4,5,6,7)
-b = [3,4,5,6,7]
-c = {
-    "a" : 3,
-    "b" : 4,
-    "c" : 5,
-    "d" : 6,
-    "e" : 7
+pokemon = {
+    'name' : 'Tinkatink',
+    'category' : 'Metalsmith',
+    'types' : ['Fairy','Steel'],
+    'hp' : 3,
+    'attack' : 3,
+    'defense' : 3,
+    'spAtk' : 3,
+    'spDef' : 4,
+    'speed' : 4
 }
-d = "34567"
 
-if 3 in a:
-    print("found in tuple")
-if 3 in b:
-    print("found in list")
-if 3 in c:
-    print("value found in dict")
-if "c" in c:
-    print("key found in dict")
-if "3" in d:
-    print("character found in string")
+pokedex = []
+pokedex.append(pokemon)
 
+# note we can also append a dictionary inline:
+pokedex.append({
+    'name' : 'Hippowdon',
+    'category' : 'Heavyweight',
+    'types' : ['Ground'],
+    'hp' : 7,
+    'attack' : 7,
+    'defense' : 7,
+    'spAtk' : 4,
+    'spDef' : 5,
+    'speed' : 3
+})
+print("Raw list output of entire pokedex")
+print(pokedex)
+print("-")
+
+print("Raw output of single entry from pokedex")
+print(pokedex[0])
+print("-")
+
+print("Raw output of select items in pokedex entry")
+print("Name",pokedex[1]['name'])
+print("Types",pokedex[1]['types'])
+print("Raw output of single entry from a specific type")
+print("Type[0]",pokedex[1]['types'][0])
+print("-")
+
+print("use of for loop to display all the names")
+for i in pokedex:
+    print(i['name'])
+print('-')
+
+print('use of for loop on a list buried in the dictionary in the list')
+print(f"{pokedex[0]['name']} is of the following types:")
+for i in pokedex[0]['types']:
+    print(i)
+
+# 

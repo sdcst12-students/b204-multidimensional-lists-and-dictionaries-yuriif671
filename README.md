@@ -2,76 +2,52 @@
 
 
 Objectives:
-* Retrieve and store data from multi value variables
-* Understand the difference between a tuple and a list
-* Create and use dictionary (dict) type variables
-* Explore how the "for" command can be used to iterate through a tuple, dict or list
+* Retrieve data from lists of lists 
+* Retrieve data from lists of dictionaries
+* Retrieve data from dictionaries with lists
 
-tuples, lists and dicts are multi value variables.  There is no set number of values that they may store.
+Once we start needing to track more data, we need to start incorporating multiple dictionaries, or data structures that are dictionaries that might contain lists, or dictionaries that might contain dictionaries!
 
-Lists:
-https://www.w3schools.com/python/python_lists.asp
+You can imagine a game like Pokemon, where there are multiple Pokemon that have some basic statistics, and we could track their stats with a dictionary.
 
-Tuples:
-https://www.w3schools.com/python/python_tuples.asp
-
-Dictionaries:
-https://www.w3schools.com/python/python_dictionaries.asp
-
-The examples will show you how you can declare variables of these types and how you can add or retrieve their values.
-
-# Dictionaries
-Dictionaries are lists where the indexes or **keys** are not set by their position in the list, but by a defined key.  Consider the code:
-
+Consider:
 ```
-    names = {
-        'first'  : 'Bobby',
-        'middle' : 'Ray',
-        'last'   : 'Keith' 
-    }
-
-```
-
-A dictionary is defined by using {} instead of [].  The dictionariy is sorted into *key* and *value* pairs.  They are accessed like a list:
-```
-print( names['first'] )
-```
-
-Note that a dictionary's keys do not need to be strings, you can also use integer values and we can also mix integer keys with string literal keys, although this is not necessarily a good idea and there is generally a better way to accomplish the same task:
-```
-inventory =  {
-    5 : 20000,
-    9 : 1000000,
-    19 : 30,
-    'none' : 0
+pokemon = {
+    'name' : 'Tinkatink',
+    'category' : 'Metalsmith',
+    'types' : ['Fairy','Steel'],
+    'hp' : 3,
+    'attack' : 3,
+    'defense' : 3,
+    'spAtk' : 3,
+    'spDef' : 4,
+    'speed' : 4
 }
+```
+Notice that we have included a list in the definition of this dictionary, because it belongs to multiple types.
+However, there are many pokemon, so we might create a Pokedex to keep track of them:
+```
+pokedex = []
+pokedex.append(pokemon)
+```
 
-### XX Tasks
+So how do we access data within this array?  Let's take a look at the code in example1.py
 
-##### Task 1
-sort all of the values of x into 2 lists.
-1 list should contain all of the float values and the other list should contain all the integer values
-(2 points) 
+##### Task 1 Simple extraction
+data from
+Advanced Dungeons and Dragons Dungeon Masters Guide p74 Cleric Table
+https://s3.amazonaws.com/arena-attachments/804915/348b48a0cbd967122dcb76f5cc6f5a01.pdf
 
-##### Task 2
-use a for loop to iterate through all possible integers to find the factors of 24
-(2 points)
+This list of lists contains Table 1a Attack Matrix for Clerics, Druids and Monks 
+The index specifies the level of the character, and the entry within the row specifies the target to hit Armor Class with 10 on the far left, and -10 on the far right.
 
-##### Task 3
-Write a python script display the values of the dictionary that are sorted by their keys (ascending values)
-(3 points)
+Write a function that finds the target based on the level and the armor class
+Check the assertion tests for expected output.
 
-##### Task 4
-write a python script to use all of the integers from 1-10 as the keys and the squares of those numbers as the values
-(2 points)
+##### Task 2 Home and Away
+There are teams representing each province and territory playing in a new E-Sports league.  The records for each game are included in the list titled 'games'
+Iterate throught the list and determine the wins and losses for each team.
 
-##### Task 5
-create a dictionary for an inventory of items in a game.  Ask the user for input, and if the item they choose to 'get item', add that item to their inventory.  If they choose to drop item' remove that item from that invenory.  If they choose 'show inventory' give them a list of the items that they have.
-
-Possible extensions:
-* nicer format for displaying inventory
-* use shortened/abbreviated names for items (recognizing first few characters or spelling errors)
-
-(3 points)
-
-
+Create a dictionary for each team and store their number of wins, games played,
+goals for and goals against.  A dictionary template has been prepped for you to 
+use, although you can probably build one faster using iteration or list comprehension
