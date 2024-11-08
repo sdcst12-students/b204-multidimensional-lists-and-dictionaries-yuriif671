@@ -35,7 +35,15 @@ teamData = {
     'BC' : {}
 }
 
-def tests():
-    assert teamData['BC']['gamesPlayed'] == 12
-    assert teamData['BC']['wins'] == 5
+for i in games:
+    teamData.update({
+        i['home']
+    })
 
+
+print(teamData)
+
+
+#def tests():
+#    assert teamData['BC']['gamesPlayed'] == 12
+#    assert teamData['BC']['wins'] == 5

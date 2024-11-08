@@ -31847,3 +31847,4 @@ pokemon = [
   }
 ]
 
+print(pokemon[0])
