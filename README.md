@@ -51,3 +51,72 @@ Iterate throught the list and determine the wins and losses for each team.
 Create a dictionary for each team and store their number of wins, games played,
 goals for and goals against.  A dictionary template has been prepped for you to 
 use, although you can probably build one faster using iteration or list comprehension
+
+
+##### Task 3 Pokedex
+This assignment is inspired by the work of Purukitto on his github at:
+https://github.com/Purukitto/pokemon-data.json
+
+Use the data in this giant list to help create a Pokedex lookup.
+You will ask the user to enter in the name of a pokemon, and your
+program will find the entry (if it exists) and display some of
+the relevant data for it.
+
+All of the data you need is included in the variable pokemon.
+Note that you can fold/hide the code by clicking on the symbols to the left of the line
+to help make it easier to show only the relevant information you need.
+
+A sample run of the program might look like this:
+```
+Choose a pokemon by
+1. ID
+2. English Name
+
+Choice: 1
+
+Enter the ID of your Pokemon: 2
+
+IVYSAUR! I CHOOSE YOU!
+Ivysaur is a Grass, Poison type Pokemon
+Ivysaur has the following stats:
+HP 60
+Attack 62
+Defense 63
+Sp. Attack 80
+Sp. Defense 80
+Speed 60
+Description:
+There is a bud on this Pokémon’s back. 
+To support its weight, Ivysaur’s legs and trunk grow thick and strong. 
+If it starts spending more time lying in the sunlight, it’s a sign that the bud will bloom into a large flower soon.
+
+Choose a pokemon by
+1. ID
+2. English Name
+
+Choice: 2
+
+Enter the English Name of your Pokemon: Mr. Yang
+
+I'm sorry, I can't find the name of the Pokemon. Did you spell it correctly?
+Enter the English Name of your Pokemon: Charmander
+
+CHARMANDER! I CHOOSE YOU!
+Charmander is a Fire type Pokemon
+HP 39
+Attack 52
+Defense 43
+Sp. Attack 60
+Sp. Defense 50
+Speed 65
+Description:
+The flame that burns at the tip of its tail is an indication of its emotions. 
+The flame wavers when Charmander is enjoying itself. 
+If the Pokémon becomes enraged, the flame burns fiercely.
+```
+
+Possible Extensions:
+There's a lot of data here, try creating a better layout using spacing/formatting.
+Some different ways to improve spacing/padding can be found at :
+https://sparkbyexamples.com/python/pad-string-with-spaces-in-python/
+

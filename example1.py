@@ -52,4 +52,35 @@ print(f"{pokedex[0]['name']} is of the following types:")
 for i in pokedex[0]['types']:
     print(i)
 
-# 
+#
+print("\n\n==\n\n")
+print(pokedex)
+"""
+The final contents of pokedex will look like the following: Note how the 
+indenting helps organize how readable it is
+"""
+pokedex = [
+    {
+        'name': 'Tinkatink', 
+        'category': 'Metalsmith', 
+        'types': ['Fairy', 'Steel'], 
+        'hp': 3, 
+        'attack': 3, 
+        'defense': 3, 
+        'spAtk': 3, 
+        'spDef': 4, 
+        'speed': 4
+    }, 
+    {
+        'name': 'Hippowdon', 
+        'category': 'Heavyweight', 
+        'types': ['Ground'], 
+        'hp': 7, 
+        'attack': 7, 
+        'defense': 7, 
+        'spAtk': 4, 
+        'spDef': 5, 
+        'speed': 3
+    }
+]
+
