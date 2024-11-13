@@ -32,16 +32,25 @@ teamData = {
         'goalsFor' : 0,
         'goalsAgainst' : 0
     },
-    'BC' : {}
 }
 
 for i in games:
-    teamData.update({
-        i['home']
-    })
+    home = i['home']
+    away = i['away']
+    teamData[home] = {
+        'gamesPlayed' : 0,
+        'wins' : 0,
+        'losses' : 0,
+        'ties' : 0,
+        'goalsFor' : 0,
+        'goalsAgainst' : 0
+    }
+    
+    teamData[home]['wins'] += 1
 
 
 print(teamData)
+print(teamData['BC']['wins'])
 
 
 #def tests():
