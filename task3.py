@@ -16,7 +16,7 @@ Choose a pokemon by
 1. ID
 2. English Name
 
-Choice: 1
+i: 1
 
 Enter the ID of your Pokemon: 2
 
@@ -38,7 +38,7 @@ Choose a pokemon by
 1. ID
 2. English Name
 
-Choice: 2
+i: 2
 
 Enter the English Name of your Pokemon: Mr. Yang
 
@@ -31847,4 +31847,46 @@ pokemon = [
   }
 ]
 
-print(pokemon[0])
+#put the print info into one function
+def display(p):
+    print(f"\n{p['name']['english'].upper()}! I CHOOSE YOU!")
+    types = ", ".join(p["type"])
+    print(f"{p['name']['english']} is a {types} type Pokémon.")
+    print("It has the following stats:")
+    for stat, value in p["base"].items():
+        print(f"{stat}: {value}")
+    print(f"Description:\n{p['description']}")
+    
+def pokedex():
+    while True:
+        print("\nChoose a Pokémon by:")
+        print("1. ID")
+        print("2. English Name")
+        
+        i = input("Choose (1 or 2): ")
+        
+        if i == "1":
+            pokemon_id = int(input("Enter the ID of your Pokemon: "))
+            found = False
+            for p in pokemon:
+                if p["id"] == pokemon_id:
+                    found = True
+                    display(p)
+                    break
+            if not found:
+                print("No Pokemon with this ID.")
+                
+        elif i == "2":
+            name = input("Enter the English Name of your Pokemon: ")
+            found = False
+            for p in pokemon:
+                if p["name"]["english"].lower() == name.lower():
+                    found = True
+                    display(p)
+                    break
+            if not found:
+                print("No Pokemon found. Check spelling")    
+        else:
+            print("Invalid input. Please choose 1 or 2.")
+
+pokedex()
